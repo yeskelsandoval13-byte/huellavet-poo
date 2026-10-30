@@ -195,6 +195,7 @@ Las pruebas cubren:
 - **[Guion de defensa](docs/GUION_DEFENSA.md)** - recorrido de 7 minutos y preguntas probables.
 - **[Rúbrica](docs/RUBRICA.md)** - checklist de lo implementado y lo planificado.
 - **[Diseño de base de datos](docs/bd/README.md)** - fases 1 a 6: requisitos, ERD, modelo lógico, normalización, modelo físico y script SQL Server.
+- **[Guía de pruebas](docs/GUIA_PRUEBAS.md)** - cómo ejecutar, probar y demostrar la aplicación.
 
 ---
 

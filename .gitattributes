@@ -1,0 +1,27 @@
+# Normaliza los finales de línea en el repositorio.
+* text=auto
+
+# Código y configuración
+*.cs text diff=csharp
+*.csproj text
+*.props text
+*.targets text
+*.sln text eol=crlf
+*.json text
+*.yml text
+*.yaml text
+*.md text
+*.txt text
+*.xml text
+*.config text
+*.sh text eol=lf
+
+# Binarios
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.nupkg binary

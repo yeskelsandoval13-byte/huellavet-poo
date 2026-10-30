@@ -1,0 +1,71 @@
+# ── .NET ──────────────────────────────────────────────────────────
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+artifacts/
+publish/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.deps.json
+*.runtimeconfig.json
+
+# ── Entorno de usuario ────────────────────────────────────────────
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userprefs
+*.sln.docstates
+*.DotSettings.user
+
+# ── Pruebas y cobertura ───────────────────────────────────────────
+TestResults/
+[Tt]est[Rr]esults/
+coverage/
+coverage.*
+*.coverage
+*.coverlet.json
+*.trx
+*.coveragexml
+
+# ── Paquetes y herramientas ───────────────────────────────────────
+packages/
+*.nupkg
+*.snupkg
+.nuget/
+dotnet-tools.json
+
+# ── Datos locales de HuellaVet ────────────────────────────────────
+huellavet.json
+huellavet.json.tmp
+*.corrupto-*.json
+datos/
+exportaciones/
+
+# ── Sistema operativo ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# ── Editores y temporales ─────────────────────────────────────────
+*.swp
+*.swo
+*~
+*.tmp
+*.temp
+*.bak
+*.log
+
+# ── Documentos generados localmente ───────────────────────────────
+docs/avance.html
+docs/avance.pdf

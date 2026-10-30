@@ -1,6 +1,5 @@
 using System;
 using System.Windows.Forms;
-using HuellaVet.Domain.Mascotas;
 
 namespace HuellaVet.WinForms;
 
@@ -13,36 +12,48 @@ public sealed class ClienteForm : Form
     public string Email { get; private set; } = string.Empty;
     public string Direccion { get; private set; } = string.Empty;
 
-    private readonly TextBox _txtNombre = new() { Width = 260 };
-    private readonly TextBox _txtApellido = new() { Width = 260 };
-    private readonly TextBox _txtDocumento = new() { Width = 260 };
-    private readonly TextBox _txtTelefono = new() { Width = 260 };
-    private readonly TextBox _txtEmail = new() { Width = 260 };
-    private readonly TextBox _txtDireccion = new() { Width = 260 };
+    private readonly TextBox _txtNombre = new() { Width = 250 };
+    private readonly TextBox _txtApellido = new() { Width = 250 };
+    private readonly TextBox _txtDocumento = new() { Width = 250 };
+    private readonly TextBox _txtTelefono = new() { Width = 250 };
+    private readonly TextBox _txtEmail = new() { Width = 250 };
+    private readonly TextBox _txtDireccion = new() { Width = 250 };
 
     public ClienteForm(bool esActualizacion = false)
     {
         Text = esActualizacion ? "Actualizar contacto" : "Nuevo cliente";
-        Width = 360;
-        Height = esActualizacion ? 260 : 340;
+        Width = 420;
+        Height = esActualizacion ? 230 : 330;
         FormBorderStyle = FormBorderStyle.FixedDialog;
         StartPosition = FormStartPosition.CenterParent;
+        MaximizeBox = false;
+        MinimizeBox = false;
+        AutoScroll = true;
 
-        var layout = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 2, RowCount = esActualizacion ? 4 : 7, Padding = new Padding(10) };
-        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        var layout = new TableLayoutPanel
+        {
+            Dock = DockStyle.Fill,
+            ColumnCount = 2,
+            RowCount = 0,
+            Padding = new Padding(12),
+            AutoSize = true
+        };
+        layout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 115));
+        layout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 260));
+
         if (!esActualizacion)
         {
-            AgregarFila(layout, "Nombre", _txtNombre);
-            AgregarFila(layout, "Apellido", _txtApellido);
-            AgregarFila(layout, "Documento", _txtDocumento);
+            Agregar(layout, "Nombre", _txtNombre);
+            Agregar(layout, "Apellido", _txtApellido);
+            Agregar(layout, "Documento", _txtDocumento);
         }
-        AgregarFila(layout, "Teléfono", _txtTelefono);
-        AgregarFila(layout, "Correo", _txtEmail);
-        AgregarFila(layout, "Dirección", _txtDireccion);
+        Agregar(layout, "Teléfono", _txtTelefono);
+        Agregar(layout, "Correo", _txtEmail);
+        Agregar(layout, "Dirección", _txtDireccion);
 
-        var botones = new FlowLayoutPanel { Dock = DockStyle.Bottom, Height = 40 };
-        var btnAceptar = new Button { Text = "Aceptar", Width = 100 };
-        var btnCancelar = new Button { Text = "Cancelar", Width = 100 };
+        var botones = new FlowLayoutPanel { Dock = DockStyle.Bottom, Height = 46, Padding = new Padding(8) };
+        var btnAceptar = new Button { Text = "Aceptar", Width = 110, Height = 30 };
+        var btnCancelar = new Button { Text = "Cancelar", Width = 110, Height = 30 };
         btnAceptar.Click += (_, _) =>
         {
             Nombre = _txtNombre.Text;
@@ -62,11 +73,12 @@ public sealed class ClienteForm : Form
         Controls.Add(botones);
     }
 
-    private static void AgregarFila(TableLayoutPanel layout, string etiqueta, Control control)
+    private static void Agregar(TableLayoutPanel layout, string etiqueta, Control control)
     {
         var fila = layout.RowCount;
         layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-        layout.Controls.Add(new Label { Text = etiqueta, AutoSize = true, Anchor = AnchorStyles.Left }, 0, fila - 1);
-        layout.Controls.Add(control, 1, fila - 1);
+        layout.Controls.Add(new Label { Text = etiqueta, AutoSize = true, Anchor = AnchorStyles.Left, Margin = new Padding(3, 6, 3, 3) }, 0, fila);
+        layout.Controls.Add(control, 1, fila);
+        layout.RowCount++;
     }
 }

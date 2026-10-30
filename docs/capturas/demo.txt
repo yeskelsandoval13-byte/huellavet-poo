@@ -1,0 +1,132 @@
+✔ Datos de demostración restablecidos.
+  _   _                  _   _          __     __         _   
+ | | | |  _   _    ___  | | | |   __ _  \ \   / /   ___  | |_ 
+ | |_| | | | | |  / _ \ | | | |  / _` |  \ \ / /   / _ \ | __|
+ |  _  | | |_| | |  __/ | | | | | (_| |   \ V /   |  __/ | |_ 
+ |_| |_|  \__,_|  \___| |_| |_|  \__,_|    \_/     \___|  \__|
+                                                              
+Cuidamos cada huella. · Sistema de gestión clínica veterinaria
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Demostración automática del avance
+Datos de ejemplo: pacientes, agenda, facturas e inventario.
+
+
+── 1. Dashboard ────────────────────────────────────────────────────────────────────────────────────────────────────────
+Resumen operativo y agenda del día.
+
+
+── Dashboard ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+Una mirada rápida a la operación de la clínica.
+
+╭───────────────────╮  ╭──────────────╮  ╭──────────────────╮  ╭────────────╮
+│ 7                 │  │ 4            │  │ C$ 9,325.06      │  │ 2          │
+│ Pacientes activos │  │ Citas de hoy │  │ Ingresos del mes │  │ Stock bajo │
+╰───────────────────╯  ╰──────────────╯  ╰──────────────────╯  ╰────────────╯
+
+Citas pendientes: 6   Empleados activos: 4
+
+── Agenda de hoy ───────────────────────────────────────────────────────────────────────────────────────────────────────
+╭─────────┬──────────────┬────────────────────────┬────────────────────────────────┬───────────────────┬───────────────╮
+│ Hora    │ Paciente     │ Dueño                  │ Servicio                       │ Veterinario       │ Estado        │
+├─────────┼──────────────┼────────────────────────┼────────────────────────────────┼───────────────────┼───────────────┤
+│ 09:00   │ Rocco        │ María José López       │ Consulta general               │ Valeria Ríos      │ Confirmada    │
+│ 10:30   │ Luna         │ María José López       │ Vacunación antirrábica         │ Marco Salas       │ Programada    │
+│ 13:00   │ Milo         │ Carlos Méndez          │ Peluquería completa            │ Valeria Ríos      │ Confirmada    │
+│ 15:30   │ Nala         │ Ana Sofía Torres       │ Consulta general               │ Marco Salas       │ Programada    │
+╰─────────┴──────────────┴────────────────────────┴────────────────────────────────┴───────────────────┴───────────────╯
+
+── Próximas vacunas (45 días) ──────────────────────────────────────────────────────────────────────────────────────────
+╭─────────────────────────┬────────────────────┬────────────────────────────────┬───────────────────────────┬──────────╮
+│ Fecha                   │ Paciente           │ Dueño                          │ Vacuna                    │ Días     │
+├─────────────────────────┼────────────────────┼────────────────────────────────┼───────────────────────────┼──────────┤
+│ 29/11/2026              │ Milo               │ Carlos Méndez                  │ Polivalente               │ 31       │
+╰─────────────────────────┴────────────────────┴────────────────────────────────┴───────────────────────────┴──────────╯
+
+── Inventario con stock bajo ───────────────────────────────────────────────────────────────────────────────────────────
+╭────────────────────────────────────────────────────────────┬───────────────┬─────────────────┬───────────────────────╮
+│ Producto                                                   │ Stock         │ Mínimo          │ Precio                │
+├────────────────────────────────────────────────────────────┼───────────────┼─────────────────┼───────────────────────┤
+│ Shampoo medicado                                           │ 3             │ 4               │ C$ 250.00             │
+│ Antibiótico oral 250 mg                                    │ 4             │ 6               │ C$ 320.00             │
+╰────────────────────────────────────────────────────────────┴───────────────┴─────────────────┴───────────────────────╯
+
+── 2. Factura de ejemplo ───────────────────────────────────────────────────────────────────────────────────────────────
+Cálculo de subtotal, descuento, IVA y total.
+
+╭─Factura HV-2026-0001─────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ Cliente: María José López                                                                                            │
+│ Documento: 001-120890-0001A   Fecha: 27/10/2026 10:35                                                                │
+│ Estado: PAGADA   Pago: Tarjeta                                                                                       │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────────────────────────────┬─────────────┬────────────────────────────┬─────────────────────╮
+│ Descripción                                         │ Cant.       │ Precio unit.               │ Subtotal            │
+├─────────────────────────────────────────────────────┼─────────────┼────────────────────────────┼─────────────────────┤
+│ Consulta general · Toby                             │ 1           │ C$ 650.00                  │ C$ 650.00           │
+╰─────────────────────────────────────────────────────┴─────────────┴────────────────────────────┴─────────────────────╯
+
+Subtotal:                C$ 650.00
+Descuento (0 %):                  C$ 0.00
+IVA (15 %):                 C$ 97.50
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+TOTAL:                C$ 747.50
+Puntos de fidelidad del cliente: 91
+
+Gracias por confiar en HuellaVet. Cuidamos cada huella.
+
+── 3. Laboratorio Clase 03 · Herencia ──────────────────────────────────────────────────────────────────────────────────
+SeleccionFutbol y sus clases hijas.
+
+List<SeleccionFutbol> equipo = new() { Futbolista, Entrenador, Masajista };
+
+• Futbolista → Diego Martínez (Edad: 24)
+    Concentrarse(): Diego Martínez se concentra para el partido como Mediocampista.
+    Viajar():       Diego Martínez viaja en el autobús del equipo.
+    JugarPartido(): Diego Martínez juega el partido con el dorsal 10.
+    Entrenar():     Diego Martínez entrena la definición y la resistencia.
+
+• Entrenador → Gustavo Acevedo (Edad: 45)
+    Concentrarse(): Gustavo Acevedo revisa la estrategia con el cuerpo técnico.
+    Viajar():       Gustavo Acevedo viaja con el cuerpo técnico.
+    DirigirPartido():       Gustavo Acevedo dirige el partido desde la banca.
+    DirigirEntrenamiento(): Gustavo Acevedo dirige el entrenamiento táctico.
+
+• Masajista → Karla Ríos (Edad: 31)
+    Concentrarse(): Karla Ríos prepara la camilla y los vendajes.
+    Viajar():       Karla Ríos viaja con el equipo médico.
+    DarMasaje(): Karla Ríos da un masaje de recuperación (Fisioterapia deportiva, 7 años de experiencia).
+
+La lista es de tipo SeleccionFutbol, pero cada objeto conserva su comportamiento real.
+Eso es herencia + polimorfismo trabajando juntos.
+
+── 4. Laboratorio Clase 03 · Polimorfismo ──────────────────────────────────────────────────────────────────────────────
+Forma y sus clases hijas.
+
+List<Forma> formas = new() { Circulo(5), Rectangulo(6×4), Cuadrado(4) };
+
+Tipo          Radio/Base/Lado       Área
+────────────────────────────────────────────
+Circulo      radio = 5.0                78.54
+Rectangulo   6.0 × 4.0                  24.00
+Cuadrado     lado = 4.0                 16.00
+
+El bucle solo conoce Forma.CalculaArea(); cada clase decide su fórmula.
+No hay if/switch por tipo: el polimorfismo resuelve el comportamiento.
+
+── 5. Laboratorio Clase 03 · Sobrecarga ────────────────────────────────────────────────────────────────────────────────
+Mismo método, distintos parámetros.
+
+La sobrecarga ocurre en tiempo de compilación: mismo nombre, distintos parámetros.
+
+Calcular(500)              → C$ 500.00
+Calcular(500, 10m)         → C$ 450.00  (descuento del 10 %)
+Calcular(500, 3)           → C$ 1,500.00  (3 servicios)
+Calcular(500, 10m, 3)      → C$ 1,350.00  (descuento + cantidad)
+
+En HuellaVet se usa sobrecarga en:
+  • ServicioVeterinario.CalcularPrecio(mascota), (mascota, descuento), (mascota, cantidad).
+  • Factura.AgregarDetalle(servicio, mascota) y AgregarDetalle(descripción, precio, cantidad).
+  • FacturacionService.GenerarFacturaParaCita(cita, pago) y (cita, pago, descuento).
+
+── Fin de la demostración ──────────────────────────────────────────────────────────────────────────────────────────────
+Ejecuta sin --demo para abrir el menú interactivo y probar los flujos completos.

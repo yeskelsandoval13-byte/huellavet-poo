@@ -738,6 +738,24 @@ Sommerville, I. (2016). *Software Engineering* (10.ª ed.). Pearson. ISBN 978-0-
 
 Spectre.Console. (2026). *Spectre.Console documentation*. https://spectreconsole.net/
 
+## 17. Diagramas incluidos
+
+### Diagrama de clases
+
+![Diagrama de clases](diagramas/clases.png)
+
+### Modelo conceptual de base de datos
+
+![Modelo conceptual](diagramas/bd-conceptual.png)
+
+### Modelo lógico de base de datos
+
+![Modelo lógico](diagramas/bd-logico.png)
+
+### Modelo físico de base de datos
+
+![Modelo físico](diagramas/bd-fisico.png)
+
 ---
 
 ## 16. Anexos

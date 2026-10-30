@@ -189,6 +189,7 @@ Las pruebas cubren:
 ## Documentación de la entrega
 
 - **[Avance del proyecto](docs/AVANCE.md)** - documento académico con problema, objetivos, marco teórico, diseño, pruebas y conclusiones.
+- **[Avance en Word](docs/AVANCE.docx)** - versión .docx para entrega o estudio.
 - **[Diagramas de clases](docs/DIAGRAMA_CLASES.md)** - jerarquías y relaciones en Mermaid.
 - **[Arquitectura](docs/ARQUITECTURA.md)** - capas, dependencias y decisiones.
 - **[Clase 03](docs/CLASE_03.md)** - correspondencia exacta con las ilustraciones del profesor.

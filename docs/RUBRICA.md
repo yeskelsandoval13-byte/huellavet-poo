@@ -123,6 +123,8 @@ Esta checklist permite comprobar el avance contra los requisitos del proyecto fi
 | Reportes | Vacunas próximas | `ProximasVacunas` | ✅ |
 | Reportes | Ingresos mensuales | `IngresosUltimosMeses` | ✅ |
 | Persistencia | Guardar y cargar JSON | `JsonAlmacenClinica` | ✅ |
+| Persistencia | Cargar y guardar en SQL Server | `SqlAlmacenClinica` | ✅ |
+| Interfaz | Windows Forms conectada a SQL Server | `HuellaVet.WinForms` | ✅ |
 | Persistencia | Conservar tipos derivados | `[JsonPolymorphic]` y `$tipo` | ✅ |
 | Persistencia | Guardado atómico | Archivo `.tmp` + `File.Move` | ✅ |
 | Persistencia | Recuperar archivo dañado | Copia `.corrupto-<fecha>.json` | ✅ |
@@ -226,9 +228,9 @@ Esta checklist permite comprobar el avance contra los requisitos del proyecto fi
 
 | Tema | Estado | Próximo paso |
 |---|---|---|
-| Interfaz gráfica | 🔜 | WinForms/WPF o web. |
-| SQL Server + ADO.NET | 🔜 | Diseño físico en `docs/bd/`; falta integración con la aplicación. |
-| CRUD completo | 🔜 | Altas, bajas y cambios de todas las entidades. |
+| Interfaz gráfica Windows Forms | ✅ | Avance conectado a SQL Server. |
+| SQL Server + ADO.NET | ✅ | `SqlAlmacenClinica` implementado. |
+| CRUD completo | 🔜 | Ampliar altas, bajas y cambios desde la UI. |
 | Autenticación y roles | 🔜 | Login, permisos y auditoría. |
 | Reportes PDF/Excel | 🔜 | Exportación y gráficos. |
 | Recordatorios | 🔜 | Correo o SMS. |

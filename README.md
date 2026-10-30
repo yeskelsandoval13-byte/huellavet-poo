@@ -28,7 +28,7 @@ Este repositorio corresponde al **avance del proyecto final** y también incluye
 | **Personal** | Nómina calculada con reglas distintas por cargo. |
 | **Reportes** | Ingresos por servicio, pacientes por especie, servicios más solicitados, vacunas próximas e ingresos mensuales. |
 | **Inventario** | Stock, mínimos, reposición y alertas. |
-| **Laboratorio Clase 03** | `SeleccionFutbol`, `Forma`, sobrecarga y explicación aplicada al proyecto. |
+| **Interfaz Windows Forms** | Dashboard, clientes, mascotas, agenda, servicios, inventario, facturación y reportes conectados a SQL Server. |
 | **Persistencia** | JSON local con guardado atómico; interfaz lista para sustituirse por SQL Server. |
 
 ---
@@ -204,11 +204,13 @@ Las pruebas cubren:
 |---|---|
 | Dominio, POO, herencia, polimorfismo y sobrecarga | ✅ Implementado |
 | Casos de uso, facturación, reportes y persistencia JSON | ✅ Implementado |
+| Persistencia SQL Server con ADO.NET (`SqlAlmacenClinica`) | ✅ Implementado |
+| Interfaz Windows Forms conectada a SQL Server | ✅ Implementado |
 | Pruebas automatizadas y CI | ✅ Implementado |
 | Diseño de base de datos SQL Server (26 tablas, vistas e índices) | ✅ Diseñado |
-| Integración ADO.NET / Entity Framework | 🔜 Unidad 3 |
-| Interfaz gráfica (WinForms/WPF o web) | 🔜 Siguiente entrega |
-| CRUD completo de todas las entidades | 🔜 Unidad 5 |
+| Integración ADO.NET / SQL Server | ✅ Implementado |
+| Interfaz gráfica Windows Forms | ✅ Implementado (avance) |
+| CRUD completo de todas las entidades | 🔜 En progreso |
 | Autenticación y roles | 🔜 Futuro |
 
 > El avance prioriza el **diseño orientado a objetos y la lógica de negocio**. La interfaz de consola permite demostrar todos los flujos sin depender de una base de datos o de un entorno gráfico.

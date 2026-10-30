@@ -126,14 +126,16 @@ Desarrollar un avance funcional de un sistema de gestión clínica veterinaria e
 | Inventario | Stock, mínimos, reposición, descuento y alertas. |
 | Reportes | Dashboard, ingresos por servicio, pacientes por especie, servicios populares, vacunas próximas e ingresos mensuales. |
 | Persistencia | JSON local con escritura atómica y copia de respaldo si el archivo está dañado. |
+| Windows Forms | Interfaz gráfica conectada a SQL Server (avance). |
+| Base de datos | Diseño físico y script SQL Server ejecutado correctamente. |
 | Laboratorio | Clase 03 exacta: herencia, polimorfismo y sobrecarga. |
 | Calidad | 32 pruebas xUnit, documento de arquitectura, diagramas y CI. |
 | Base de datos | Diseño relacional completo en SQL Server: 26 tablas, vistas, índices y normalización 3NF. |
 
 ### 5.2 Fuera de alcance en esta entrega
 
-- Interfaz gráfica de escritorio o web.
-- Base de datos SQL Server y acceso con ADO.NET (el diseño físico ya está incluido en `docs/bd/`).
+- Interfaz gráfica completa de escritorio o web.
+- CRUD completo de todas las entidades.
 - Autenticación, roles y auditoría.
 - Concurrencia multiusuario y transacciones distribuidas.
 - Pasarela de pagos real.
@@ -396,6 +398,7 @@ ServicioVeterinario
 5. **La persistencia es reemplazable.** `IAlmacenClinica` separa la aplicación del mecanismo concreto.
 6. **La consola se adapta al contexto.** Cuando la salida está redirigida, no intenta limpiar la pantalla; así funciona `--demo` en CI o en una terminal capturada.
 7. **Los errores esperados son de negocio.** `ReglaNegocioException` transporta un mensaje comprensible; la consola lo muestra sin cerrar la aplicación.
+8. **La persistencia es intercambiable.** `IAlmacenClinica` permite usar JSON o SQL Server sin cambiar los servicios. La interfaz Windows Forms consume los mismos casos de uso.
 
 ### 8.7 Flujo principal: atender y facturar
 
@@ -698,8 +701,8 @@ El resultado es un avance funcional, defendible y extensible. No está terminado
 
 ## 14. Trabajo futuro
 
-1. **Interfaz gráfica.** WinForms, WPF o una aplicación web con ASP.NET Core, reutilizando los servicios actuales.
-2. **SQL Server y ADO.NET.** El diseño físico ya está documentado en `docs/bd/`; falta implementar la migración desde JSON.
+1. **Interfaz gráfica completa.** Ampliar Windows Forms con CRUD completo, validaciones visuales y reportes exportables.
+2. **SQL Server y ADO.NET.** Ya existe `SqlAlmacenClinica`; falta completar CRUD, transacciones y repositorios por entidad.
 3. **CRUD completo.** Altas, bajas y cambios de todas las entidades, con auditoría.
 4. **Autenticación y roles.** Recepción, veterinario y administrador, con permisos diferenciados.
 5. **Reportes exportables.** PDF y Excel, además de gráficos históricos.

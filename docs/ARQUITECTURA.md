@@ -6,14 +6,17 @@ HuellaVet sigue una arquitectura por capas con dependencias dirigidas hacia el d
 
 ```mermaid
 flowchart TD
-    UI["HuellaVet.Console<br/>Presentación"] --> APP["HuellaVet.Application<br/>Casos de uso"]
-    UI --> INFRA["HuellaVet.Infrastructure<br/>Persistencia"]
+    CON["HuellaVet.Console<br/>Presentación"] --> APP["HuellaVet.Application<br/>Casos de uso"]
+    CON --> INFRA["HuellaVet.Infrastructure<br/>Persistencia"]
+    WIN["HuellaVet.WinForms<br/>Interfaz Windows Forms"] --> APP
+    WIN --> INFRA
     APP --> DOM["HuellaVet.Domain<br/>Reglas de negocio"]
     APP --> ABS["IAlmacenClinica<br/>Abstracción"]
     INFRA -. implementa .-> ABS
     INFRA --> DOM
-    UI --> LAB["HuellaVet.Laboratorio<br/>Clase 03"]
+    CON --> LAB["HuellaVet.Laboratorio<br/>Clase 03"]
     INFRA --> JSON[("huellavet.json")]
+    INFRA --> SQL[("SQL Server<br/>HuellaVet")]
 ```
 
 | Capa | Proyecto | Puede depender de |
@@ -39,9 +42,10 @@ public interface IAlmacenClinica
 }
 ```
 
-La aplicación trabaja contra `IAlmacenClinica`. Hoy existen dos implementaciones:
+La aplicación trabaja contra `IAlmacenClinica`. Hoy existen tres implementaciones:
 
 - `JsonAlmacenClinica`: guarda un archivo local con escritura atómica.
+- `SqlAlmacenClinica`: carga y guarda el agregado en SQL Server mediante ADO.NET.
 - `AlmacenMemoria`: no escribe archivos; se usa en pruebas y demostraciones.
 
 En la siguiente fase se puede crear `SqlAlmacenClinica` o dividir la interfaz en repositorios por entidad (`IClienteRepository`, `ICitaRepository`, etc.) sin tocar `ClinicaService` ni `FacturacionService`.

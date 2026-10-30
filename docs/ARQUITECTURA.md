@@ -129,7 +129,7 @@ Limitaciones:
 - No hay transacciones.
 - No reemplaza una base de datos relacional.
 
-La Unidad 3 del curso trabaja acceso a datos; ahí se incorporará SQL Server con ADO.NET.
+La Unidad 3 del curso trabaja acceso a datos; el diseño físico ya está documentado en `docs/bd/` (26 tablas, vistas e índices), por lo que la siguiente implementación será crear `SqlAlmacenClinica` o repositorios ADO.NET.
 
 ### 4.5 Pruebas con almacén en memoria
 
@@ -192,7 +192,7 @@ Así se recuperan `Perro`, `Gato`, `Veterinario` o `Cirugia` sin perder el tipo 
 ## 7. Ruta hacia la siguiente entrega
 
 1. **Interfaz gráfica:** WinForms/WPF o web. La lógica ya está separada; solo se reemplazan las páginas de consola.
-2. **SQL Server:** crear la base `HuellaVet`, tablas y procedimientos; implementar repositorios ADO.NET.
+2. **SQL Server:** el diseño físico ya está documentado en `docs/bd/`; implementar repositorios ADO.NET y migrar desde JSON.
 3. **CRUD completo:** altas, bajas, cambios y consultas de todas las entidades.
 4. **Seguridad:** inicio de sesión, roles (administrador, veterinario, recepción) y auditoría.
 5. **Reportes exportables:** PDF/Excel y gráficos.

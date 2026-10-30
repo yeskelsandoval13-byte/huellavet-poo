@@ -128,11 +128,12 @@ Desarrollar un avance funcional de un sistema de gestión clínica veterinaria e
 | Persistencia | JSON local con escritura atómica y copia de respaldo si el archivo está dañado. |
 | Laboratorio | Clase 03 exacta: herencia, polimorfismo y sobrecarga. |
 | Calidad | 32 pruebas xUnit, documento de arquitectura, diagramas y CI. |
+| Base de datos | Diseño relacional completo en SQL Server: 26 tablas, vistas, índices y normalización 3NF. |
 
 ### 5.2 Fuera de alcance en esta entrega
 
 - Interfaz gráfica de escritorio o web.
-- Base de datos SQL Server y acceso con ADO.NET.
+- Base de datos SQL Server y acceso con ADO.NET (el diseño físico ya está incluido en `docs/bd/`).
 - Autenticación, roles y auditoría.
 - Concurrencia multiusuario y transacciones distribuidas.
 - Pasarela de pagos real.
@@ -335,16 +336,18 @@ La verificación se apoya en tres evidencias: `dotnet test`, la salida de `--dem
 
 ### 8.4 Arquitectura
 
-```mermaid
-flowchart TD
-    UI["HuellaVet.Console<br/>Presentación"] --> APP["HuellaVet.Application<br/>Casos de uso"]
-    UI --> INFRA["HuellaVet.Infrastructure<br/>Persistencia JSON"]
-    APP --> DOM["HuellaVet.Domain<br/>Entidades y reglas"]
-    APP --> IFACE["IAlmacenClinica<br/>Contrato"]
-    INFRA -. implementa .-> IFACE
-    INFRA --> DOM
-    UI --> LAB["HuellaVet.Laboratorio<br/>Clase 03"]
-    INFRA --> FILE[("huellavet.json")]
+```text
+HuellaVet.Console · presentación
+   │
+   ├──> HuellaVet.Application · casos de uso y reportes
+   │        └──> HuellaVet.Domain · entidades y reglas
+   │        └──> IAlmacenClinica · contrato de persistencia
+   │
+   ├──> HuellaVet.Infrastructure · JSON / memoria
+   │        └──> implementa IAlmacenClinica
+   │        └──> huellavet.json
+   │
+   └──> HuellaVet.Laboratorio · Clase 03
 ```
 
 | Proyecto | Responsabilidad | Depende de |
@@ -416,6 +419,30 @@ Recepción cobra
       aplica descuento (máximo 50 %) e IVA (15 %)
       registra el pago y acumula puntos
 ```
+
+### 8.8 Diseño de base de datos
+
+Además del avance de aplicación, el repositorio incluye el diseño relacional completo de HuellaVet en `docs/bd/`. El modelo sigue las seis fases de la guía del profesor y contiene 26 tablas, 28 relaciones, 5 catálogos, 6 vistas, índices, restricciones y un script ejecutable para SQL Server 2022.
+
+| Fase | Evidencia |
+|---|---|
+| 1. Requisitos y análisis | `docs/bd/01_requisitos.md` |
+| 2. Modelo conceptual | `docs/bd/02_modelo_conceptual.drawio` |
+| 3. Modelo lógico | `docs/bd/03_modelo_logico.drawio` |
+| 4. Normalización | `docs/bd/04_normalizacion.md` |
+| 5. Modelo físico | `docs/bd/05_modelo_fisico.drawio` y `docs/bd/07_diccionario_datos.md` |
+| 6. Implementación | `docs/bd/06_huellavet_sqlserver.sql` |
+
+Decisiones principales:
+
+- **Table-per-type** para personas, mascotas y servicios.
+- **GUID** como clave primaria, coincidiendo con `Guid` del dominio.
+- **Totales no almacenados**; se calculan en `vw_FacturasResumen`.
+- **Precio histórico** en `DetallesFactura`.
+- **Índice único filtrado** `UX_Facturas_Cita` para garantizar una factura por cita.
+- **CHECK** para enumeraciones y rangos.
+
+La aplicación sigue usando JSON en esta entrega; el script SQL es el modelo físico listo para la migración de la Unidad 3.
 
 ---
 
@@ -672,7 +699,7 @@ El resultado es un avance funcional, defendible y extensible. No está terminado
 ## 14. Trabajo futuro
 
 1. **Interfaz gráfica.** WinForms, WPF o una aplicación web con ASP.NET Core, reutilizando los servicios actuales.
-2. **SQL Server y ADO.NET.** Crear la base `HuellaVet`, tablas, relaciones y repositorios por entidad.
+2. **SQL Server y ADO.NET.** El diseño físico ya está documentado en `docs/bd/`; falta implementar la migración desde JSON.
 3. **CRUD completo.** Altas, bajas y cambios de todas las entidades, con auditoría.
 4. **Autenticación y roles.** Recepción, veterinario y administrador, con permisos diferenciados.
 5. **Reportes exportables.** PDF y Excel, además de gráficos históricos.
@@ -712,8 +739,9 @@ Spectre.Console. (2026). *Spectre.Console documentation*. https://spectreconsole
 
 ## 16. Anexos
 
-- [`README.md`](../README.md) — presentación, instalación y comandos.
-- [`ARQUITECTURA.md`](ARQUITECTURA.md) — capas, dependencias y decisiones.
+- [`README.md`](../README.md) - presentación, instalación y comandos.
+- [`bd/README.md`](bd/README.md) - diseño de base de datos, fases 1 a 6.
+- [`ARQUITECTURA.md`](ARQUITECTURA.md) - capas, dependencias y decisiones.
 - [`DIAGRAMA_CLASES.md`](DIAGRAMA_CLASES.md) — diagramas Mermaid del dominio y la Clase 03.
 - [`CLASE_03.md`](CLASE_03.md) — correspondencia exacta con las ilustraciones del docente.
 - [`GUION_DEFENSA.md`](GUION_DEFENSA.md) — recorrido de exposición y preguntas probables.

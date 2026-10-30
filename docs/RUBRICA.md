@@ -206,12 +206,28 @@ Esta checklist permite comprobar el avance contra los requisitos del proyecto fi
 
 ---
 
-## 9. Lo que falta para la entrega final
+## 9. Diseño de base de datos
+
+| Requisito | Evidencia | Estado |
+|---|---|---|
+| Fase 1: requisitos y análisis | `docs/bd/01_requisitos.md` | ✅ |
+| Fase 2: modelo conceptual | `docs/bd/02_modelo_conceptual.drawio` | ✅ |
+| Fase 3: modelo lógico | `docs/bd/03_modelo_logico.drawio` | ✅ |
+| Fase 4: normalización 3NF | `docs/bd/04_normalizacion.md` | ✅ |
+| Fase 5: modelo físico | `docs/bd/05_modelo_fisico.drawio`, `docs/bd/07_diccionario_datos.md` | ✅ |
+| Fase 6: implementación SQL Server | `docs/bd/06_huellavet_sqlserver.sql` | ✅ |
+| 26 tablas y 28 relaciones | `docs/bd/modelo-bd.mjs` | ✅ |
+| Vistas de reportes | `vw_Empleados`, `vw_Mascotas`, `vw_Agenda`, `vw_FacturasResumen`, `vw_StockBajo`, `vw_VacunasProximas` | ✅ |
+| Índices y restricciones | `UX_Facturas_Cita`, `IX_Citas_Veterinario_Fecha`, `CK_Facturas_Pago_Coherente` | ✅ |
+
+---
+
+## 10. Lo que falta para la entrega final
 
 | Tema | Estado | Próximo paso |
 |---|---|---|
 | Interfaz gráfica | 🔜 | WinForms/WPF o web. |
-| SQL Server + ADO.NET | 🔜 | Tablas, repositorios y transacciones. |
+| SQL Server + ADO.NET | 🔜 | Diseño físico en `docs/bd/`; falta integración con la aplicación. |
 | CRUD completo | 🔜 | Altas, bajas y cambios de todas las entidades. |
 | Autenticación y roles | 🔜 | Login, permisos y auditoría. |
 | Reportes PDF/Excel | 🔜 | Exportación y gráficos. |

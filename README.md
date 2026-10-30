@@ -188,12 +188,13 @@ Las pruebas cubren:
 
 ## Documentación de la entrega
 
-- **[Avance del proyecto](docs/AVANCE.md)** — documento académico con problema, objetivos, marco teórico, diseño, pruebas y conclusiones.
-- **[Diagramas de clases](docs/DIAGRAMA_CLASES.md)** — jerarquías y relaciones en Mermaid.
-- **[Arquitectura](docs/ARQUITECTURA.md)** — capas, dependencias y decisiones.
-- **[Clase 03](docs/CLASE_03.md)** — correspondencia exacta con las ilustraciones del profesor.
-- **[Guion de defensa](docs/GUION_DEFENSA.md)** — recorrido de 7 minutos y preguntas probables.
-- **[Rúbrica](docs/RUBRICA.md)** — checklist de lo implementado y lo planificado.
+- **[Avance del proyecto](docs/AVANCE.md)** - documento académico con problema, objetivos, marco teórico, diseño, pruebas y conclusiones.
+- **[Diagramas de clases](docs/DIAGRAMA_CLASES.md)** - jerarquías y relaciones en Mermaid.
+- **[Arquitectura](docs/ARQUITECTURA.md)** - capas, dependencias y decisiones.
+- **[Clase 03](docs/CLASE_03.md)** - correspondencia exacta con las ilustraciones del profesor.
+- **[Guion de defensa](docs/GUION_DEFENSA.md)** - recorrido de 7 minutos y preguntas probables.
+- **[Rúbrica](docs/RUBRICA.md)** - checklist de lo implementado y lo planificado.
+- **[Diseño de base de datos](docs/bd/README.md)** - fases 1 a 6: requisitos, ERD, modelo lógico, normalización, modelo físico y script SQL Server.
 
 ---
 
@@ -204,8 +205,9 @@ Las pruebas cubren:
 | Dominio, POO, herencia, polimorfismo y sobrecarga | ✅ Implementado |
 | Casos de uso, facturación, reportes y persistencia JSON | ✅ Implementado |
 | Pruebas automatizadas y CI | ✅ Implementado |
+| Diseño de base de datos SQL Server (26 tablas, vistas e índices) | ✅ Diseñado |
+| Integración ADO.NET / Entity Framework | 🔜 Unidad 3 |
 | Interfaz gráfica (WinForms/WPF o web) | 🔜 Siguiente entrega |
-| SQL Server + ADO.NET | 🔜 Unidad 3 |
 | CRUD completo de todas las entidades | 🔜 Unidad 5 |
 | Autenticación y roles | 🔜 Futuro |
 
